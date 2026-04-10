@@ -1,7 +1,7 @@
 <template>
-  <router-view />
+  <router-view v-slot="{ Component }">
+    <transition name="fade" mode="out-in">
+      <component :is="Component" />
+    </transition>
+  </router-view>
 </template>
-
-<style>
-body { margin: 0; background-color: #f4f6f9; color: #333; }
-</style>

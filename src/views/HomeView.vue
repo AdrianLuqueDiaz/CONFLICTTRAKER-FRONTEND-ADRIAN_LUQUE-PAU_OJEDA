@@ -1,7 +1,7 @@
 <template>
   <BaseContainer>
     <template #header>
-      <h1>🌍 The Global Conflict Monitor</h1>
+      <h1>The Global Conflict Monitor</h1>
       <input
         v-model="searchQuery"
         type="text"
