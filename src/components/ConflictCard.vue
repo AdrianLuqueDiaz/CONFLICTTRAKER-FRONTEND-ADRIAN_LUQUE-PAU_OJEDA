@@ -1,14 +1,18 @@
 <template>
   <div class="card" :class="estadoClass">
     <h3>{{ conflict.nombre }}</h3>
-    <p>Inici: {{ formatDate(conflict.fechaInicio) }}</p>
-    <p>Estat: <strong>{{ conflict.estado }}</strong></p>
-    <button class="btn" @click="$emit('veure-detall', conflict.id)">Veure Detall</button>
+    <p>{{ t('start') }}: {{ formatDate(conflict.fechaInicio) }}</p>
+    <p>{{ t('status') }}:  
+      <strong v-if="conflict.estado === 'ACTIVO'">{{ t('state') }}</strong>
+      <strong v-else>{{ t('statefalse') }}</strong>
+    </p>
+    <button class="btn" @click="$emit('veure-detall', conflict.id)">{{ t('viewDetail') }}</button>
   </div>
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed } from 'vue';
+import { t } from '../composables/useI18n';
 
 const props = defineProps({
   conflict: {

@@ -7,7 +7,10 @@
     
     <div v-else-if="conflict" class="detail-view">
       <h1>{{ conflict.nombre }}</h1>
-      <span class="badge" :class="conflict.estado.toLowerCase()">{{ t('status') }}: {{ conflict.estado }}</span>
+      <span class="badge" :class="conflict.estado.toLowerCase()">{{ t('status') }}: 
+        <span v-if="conflict.estado === 'ACTIVO'">{{ t('state') }}</span>
+        <span v-else>{{ t('statefalse') }}</span>
+      </span>
       
       <div class="info-section">
         <h3>{{ t('generalInfo') }}</h3>

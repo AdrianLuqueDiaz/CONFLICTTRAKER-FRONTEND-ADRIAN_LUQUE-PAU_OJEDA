@@ -4,7 +4,7 @@ export const locale = ref('ca') // Idioma por defecto: catalán
 
 const translations = {
   ca: {
-    title: "🌍 Monitor de Conflictes Global",
+    title: "Monitor de Conflictes Global",
     searchPlaceholder: "Cerca conflictes per nom o país...",
     loading: "Carregant...",
     errorConn: "Error de connexió amb la API.",
@@ -17,10 +17,12 @@ const translations = {
     countriesInvolved: "🏳️ Països Implicats",
     noCountries: "No hi ha dades de països registrades.",
     unknown: "Desconeguda",
+    state: "ACTIU",
+    statefalse: "FINALITZAT",
     langSwitch: "English"
   },
   en: {
-    title: "🌍 Global Conflict Monitor",
+    title: "Global Conflict Monitor",
     searchPlaceholder: "Search conflicts by name or country...",
     loading: "Loading...",
     errorConn: "API connection error.",
@@ -33,6 +35,8 @@ const translations = {
     countriesInvolved: "🏳️ Countries Involved",
     noCountries: "No country data registered for this conflict.",
     unknown: "Unknown",
+    state: "ACTIVE",
+    statefalse: "CONCLUDED",
     langSwitch: "Català"
   }
 }
