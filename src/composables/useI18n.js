@@ -1,6 +1,6 @@
 import { ref } from 'vue'
 
-export const locale = ref('ca') // Idioma por defecto: catalán
+export const locale = ref('ca') 
 
 const translations = {
   ca: {
@@ -19,6 +19,8 @@ const translations = {
     unknown: "Desconeguda",
     state: "ACTIU",
     statefalse: "FINALITZAT",
+    locationMap: "Mapa de la ubicació",
+    conflictsByRegion: "Conflicts by region",
     langSwitch: "English"
   },
   en: {
@@ -37,6 +39,8 @@ const translations = {
     unknown: "Unknown",
     state: "ACTIVE",
     statefalse: "CONCLUDED",
+    locationMap: "Location map",
+    conflictsByRegion: "Conflictes per regió",
     langSwitch: "Català"
   }
 }
