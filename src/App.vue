@@ -1,0 +1,7 @@
+<template>
+  <router-view />
+</template>
+
+<style>
+body { margin: 0; background-color: #f4f6f9; color: #333; }
+</style>
