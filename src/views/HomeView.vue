@@ -1,20 +1,20 @@
 <template>
   <BaseContainer>
     <template #header>
-      <h1>The Global Conflict Monitor</h1>
+      <h1>{{ t('title') }}</h1>
       <input
         v-model="searchQuery"
         type="text"
-        placeholder="Cerca conflictes per nom o país (Ex: Ucraïna)..."
+        :placeholder="t('searchPlaceholder')"
         class="search-bar"
       />
     </template>
 
-    <div v-if="store.loading" class="loading">Carregant conflictes... ⏳</div>
-    <div v-else-if="store.error" class="error">{{ store.error }}</div>
+    <div v-if="store.loading" class="loading">{{ t('loading') }} ⏳</div>
+    <div v-else-if="store.error" class="error">{{ t('errorConn') }}</div>
     
     <div v-else class="grid">
-      <p v-if="filteredConflicts.length === 0">No s'han trobat conflictes amb aquesta cerca.</p>
+      <p v-if="filteredConflicts.length === 0">{{ t('noResults') }}</p>
       <ConflictCard
         v-for="conflict in filteredConflicts"
         :key="conflict.id"
@@ -29,6 +29,7 @@
 import { ref, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useConflictStore } from '../store/conflictStore'
+import { t } from '../composables/useI18n'
 import BaseContainer from '../components/BaseContainer.vue'
 import ConflictCard from '../components/ConflictCard.vue'
 
